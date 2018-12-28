@@ -1,0 +1,4 @@
+<div class="eventlist">
+  <button mat-button *ngFor="let event of Events" (click)="redirect( event.id )">{{ event.name }}</button>
+</div>
+<router-outlet></router-outlet>
