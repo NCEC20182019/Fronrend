@@ -4,7 +4,8 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatTabsModule, MatButtonModule, MatBottomSheetModule, 
-         MatFormFieldModule, MatCardModule, MatProgressSpinnerModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+         MatFormFieldModule, MatCardModule, MatProgressSpinnerModule, MatInputModule,
+         MatSnackBarModule, MatTableModule, MatPaginatorModule, MatSortModule  } from '@angular/material';
 import { AppRoutingModule } from './core/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -43,6 +44,9 @@ import { EventViewComponent } from './components/event-view/event-view.component
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
     MatToolbarModule,
     MatTabsModule,
     MatButtonModule,

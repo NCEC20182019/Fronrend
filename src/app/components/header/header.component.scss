@@ -5,6 +5,9 @@ mat-toolbar{
         margin: 10px 50px;
         font-size: 24px;
     }
+    span:hover{
+        cursor: pointer;
+    }
 
     .active-link{
         background: rgba(192, 160, 216, 0.493);

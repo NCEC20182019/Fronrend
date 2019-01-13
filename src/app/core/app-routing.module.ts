@@ -8,27 +8,16 @@ import { CalendarComponent } from '../components/calendar/calendar.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
+    path: '', pathMatch: 'full',
     redirectTo: 'events'
   },
   {
     path: 'events',
     component: EventlistComponent,
-    children: [
-      { path: '', redirectTo: 'map', pathMatch: 'full' },
-      { path: 'map', component: MapComponent },
-      { path: 'calendar', component: CalendarComponent }
-    ]
   },
   {
     path: 'events/:id',
     component: EventViewComponent,
-    children: [
-      { path: '', redirectTo: 'map', pathMatch: 'full' },
-      { path: 'map', component: MapComponent },
-      { path: 'calendar', component: CalendarComponent }
-    ]
   },
   {
     path: '**',

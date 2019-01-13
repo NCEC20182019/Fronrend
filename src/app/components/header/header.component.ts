@@ -30,8 +30,7 @@ export class HeaderComponent implements OnInit {
     this.bottomSheet.open(LoginFormComponent);
   }
 
-  changeView(_url){
-    console.log(this.currentRoute);
-    this.router.navigate([_url], { relativeTo: this.currentRoute });
+  redirectHome(){
+    this.router.navigate([''])
   }
 }

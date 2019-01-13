@@ -9,7 +9,7 @@ import { IEvent } from '../components/IEvent';
 export class DataService {
 
   // private _eventsUri = "/assets/events.json";
-  private _eventsUri = "http://jsonplaceholder.typicode.com/users";
+  private _eventsUri = "https://7678acb1-b897-4f74-a317-63ae18c493fe.mock.pstmn.io/events";
 
   constructor(private http: HttpClient) { }
 

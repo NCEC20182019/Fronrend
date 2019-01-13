@@ -1,13 +1,5 @@
 <mat-toolbar color="primary">
-  <span> {{Title}} </span>
-
-  <nav mat-tab-nav-bar>
-    <a mat-tab-link
-        *ngFor="let link of navLinks"
-        (click)="changeView(link.relativePath)">
-      {{link.label}}
-    </a>
-  </nav>
+  <span (click)="redirectHome()"> {{Title}} </span>
 
   <button id="loginBT" mat-raised-button (click)="openBottomSheet()">Login</button>
 </mat-toolbar>

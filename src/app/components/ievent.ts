@@ -7,5 +7,8 @@ export interface IEvent{
     link: Url,
     description: String,
     lng: Number,
-    ltd: Number
+    ltd: Number,
+    start_date: String,
+    end_date: String,
+    pic: String
 }

@@ -12,22 +12,22 @@ export class EventViewComponent implements OnInit {
 
   private currentEvent: IEvent;
 
-  @Output() public sendRoute = new EventEmitter();
+  // @Output() public sendRoute = new EventEmitter();
 
-  constructor(private data: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.sendRoute.emit(this.route);
+    // this.sendRoute.emit(this.route);
 
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.getCurrentEvent(parseInt(params.get('id')));
+        this.getCurrentEvent(parseInt(params.get('id')));
       });
   }
 
   getCurrentEvent(_id){
-    this.data.getEvents().subscribe(
+    this.dataService.getEvents().subscribe(
       (events: IEvent[]) => {
-        this.currentEvent = events.filter(x=> x.id === _id)[0];
+        this.currentEvent = events.filter( (x) => x.id === _id )[0];
       }
     )
   }
