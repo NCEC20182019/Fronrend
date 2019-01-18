@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatTabsModule, MatButtonModule, MatBottomSheetModule, 
          MatFormFieldModule, MatCardModule, MatProgressSpinnerModule, MatInputModule,
          MatSnackBarModule, MatTableModule, MatPaginatorModule, MatSortModule  } from '@angular/material';
+import {OverlayModule, OverlayContainer, FullscreenOverlayContainer} from '@angular/cdk/overlay';
 import { AppRoutingModule } from './core/app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EventlistComponent } from './components/eventlist/eventlist.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
 import { EventViewComponent } from './components/event-view/event-view.component';
+import { OverlayComponent } from './services/overlay/overlay.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { EventViewComponent } from './components/event-view/event-view.component
     FooterComponent,
     EventlistComponent,
     MapViewComponent,
-    EventViewComponent
+    EventViewComponent,
+    OverlayComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -55,9 +58,15 @@ import { EventViewComponent } from './components/event-view/event-view.component
     MatCardModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    OverlayModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: OverlayContainer, useClass: FullscreenOverlayContainer}
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [ 
+    MapComponent
+  ]
 })
 export class AppModule { }
